@@ -70,7 +70,7 @@ class TeleportRule extends LintRule {
           nodes?.forEach((node) => {
             // get all schema items from properties, except nodeInstanceId
             const callingSchema = Object.keys(node.data.properties).filter(
-              (prop) => prop !== "nodeInstanceId"
+              (prop) => prop !== "nodeInstanceId" && prop !== "nodeTitle"
             );
 
             callingSchema.forEach((attrName) => {

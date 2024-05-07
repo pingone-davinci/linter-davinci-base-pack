@@ -25,7 +25,7 @@ class LogoRule extends LintRule {
       const { allFlows } = this;
 
       // Ignore this rule in subflows, CSS should be applied at the main flow level
-      if (this.dvUtils.getAllSubFlows(allFlows).includes(dvFlow.flowId)) {
+      if (this.dvUtil.getAllSubFlows(allFlows).includes(dvFlow.flowId)) {
         return;
       }
       // Check for custom CSS enabled

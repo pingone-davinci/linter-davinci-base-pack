@@ -49,8 +49,8 @@ class TeleportRule extends LintRule {
       Object.entries(startNodes).forEach(([nodeId, nodeTitle]) => {
         if (!gotoNodes.includes(nodeId)) {
           this.addError("dv-er-teleport-001", {
-            messageArgs: [`${nodeTitle} (${nodeId})`],,
-            nodeId: data.id,
+            messageArgs: [`${nodeTitle} (${nodeId})`],
+            nodeId,
           });
         } else {
           // Check if the goto node has the correct input schema
@@ -77,8 +77,8 @@ class TeleportRule extends LintRule {
             callingSchema.forEach((attrName) => {
               if (gotoNodeInputSchemaJSON.properties[attrName] === undefined) {
                 this.addError("dv-er-teleport-002", {
-                  messageArgs: [attrName],,
-                  nodeId: data.id,
+                  messageArgs: [attrName],
+                  nodeId: node.data.id,
                 });
 
                 if (this.cleanFlow) {

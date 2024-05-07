@@ -9,13 +9,28 @@ class LogoRule extends LintRule {
       cleans: false,
     });
 
-    this.addCode("dv-rule-debug-off-001", {
+    this.addCode("dv-bp-logo-001", {
       description: "In flow settings, useCustomCSS not set to true",
       message: "useCustomCSS not set to true",
       type: "best-practice",
       recommendation: "Use recommended CSS settings for Ping developed flows",
-      reference:
-        "https://docs.pingidentity.com/r/en-us/davinci/rxo1664233464532",
+      reference: "https://library.pingidentity.com/page/ping-ux-css",
+    });
+    this.addCode("dv-bp-logo-002", {
+      description:
+        "In flow settings, companyLogo class not included in custom CSS",
+      message: "companyLogo class not included in custom CSS",
+      type: "best-practice",
+      recommendation: "Use recommended CSS settings for Ping developed flows",
+      reference: "https://library.pingidentity.com/page/ping-ux-css",
+    });
+    this.addCode("dv-bp-logo-003", {
+      description:
+        "Found companyLogo environment variable in variables connector, this should be handled in custom CSS settings",
+      message: "companyLogo environment variable found",
+      type: "best-practice",
+      recommendation: "Use recommended CSS settings for Ping developed flows",
+      reference: "https://library.pingidentity.com/page/ping-ux-css",
     });
   }
 

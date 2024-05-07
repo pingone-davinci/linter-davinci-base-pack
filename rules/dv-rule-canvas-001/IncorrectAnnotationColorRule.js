@@ -28,6 +28,7 @@ class IncorrectAnnotationColorRule extends LintRule {
         "#fffaa0ff",
         "#50e3c2ff",
         "#ffffffff",
+        "#f7f7adff",
       ];
 
       annotationNodes.forEach((node) => {

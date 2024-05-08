@@ -7,7 +7,7 @@ const {
   author,
 } = require("./package.json");
 
-class PingIdentityBaseDaVinciRulePack extends LintRulePack {
+class RulePack extends LintRulePack {
   constructor() {
     super({
       directory: __dirname,
@@ -20,4 +20,4 @@ class PingIdentityBaseDaVinciRulePack extends LintRulePack {
   }
 }
 
-module.exports = PingIdentityBaseDaVinciRulePack;
+module.exports = RulePack;

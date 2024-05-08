@@ -3,13 +3,13 @@ const LintRule = require("pingone-davinci-linter/lib/LintRule");
 class DebugOffRule extends LintRule {
   constructor() {
     super({
-      id: "dv-rule-canvas-005",
+      id: "dv-rule-debug-off-001",
       description: "Ensure the flow has debug mode turned off",
       cleans: false,
       reference: "",
     });
 
-    this.addCode("dv-rule-debug-off-001", {
+    this.addCode("dv-bp-debug-off-001", {
       description: "In flow settings, log level is currently set to Debug",
       message: "Log level set to Debug",
       type: "best-practice",

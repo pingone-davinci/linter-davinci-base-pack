@@ -2,7 +2,7 @@
   "name": "linter-davinci-base-pack",
   "version": "0.1.0",
   "description": "Collection of base rules used to lint DaVinci flows.",
-  "main": "PingIdentityBaseDaVinciRulePack.js",
+  "main": "RulePack.js",
   "scripts": {
     "test": "jest --verbose",
     "eslint": "eslint -c .eslintrc ./lib/**"

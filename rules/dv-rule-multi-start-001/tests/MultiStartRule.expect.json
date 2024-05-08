@@ -4,7 +4,6 @@
   "errorCount": 3,
   "rulePackResults": [
     {
-      "name": "pingidentity-base-davinci-rule-pack",
       "pass": false,
       "errorCount": 3,
       "lintResults": [

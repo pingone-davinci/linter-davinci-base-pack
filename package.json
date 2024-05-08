@@ -1,7 +1,7 @@
 {
   "name": "linter-davinci-base-pack",
   "version": "0.1.0",
-  "description": "PingOne DaVinci Linter Base Pack",
+  "description": "Collection of base rules used to lint DaVinci flows.",
   "main": "PingIdentityBaseDaVinciRulePack.js",
   "scripts": {
     "test": "jest --verbose",
@@ -17,12 +17,12 @@
     "flow",
     "linter"
   ],
-  "author": "Ping Identity Cloud Accelerators (https://www.pingidentity.com/)",
+  "author": "Ping Identity",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/pingone-davinci/pingone-davinci-linter/issues"
   },
-  "homepage": "https://github.com/pingone-davinci/pingone-davinci-linter#readme",
+  "homepage": "https://library.pingidentity.com/page/linter-davinci-base-pack",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",

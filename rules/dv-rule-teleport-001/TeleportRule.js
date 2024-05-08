@@ -31,7 +31,7 @@ class TeleportRule extends LintRule {
       const gotoNodes = [];
 
       // Get teleport start nodes and goto nodes
-      this.mainFlow?.enabledGraphData?.elements?.nodes?.forEach((node) => {
+      this.mainFlow?.graphData?.elements?.nodes?.forEach((node) => {
         if (
           node.data?.connectorId?.match("nodeConnector") &&
           node.data?.capabilityName?.match("startNode")
@@ -64,10 +64,10 @@ class TeleportRule extends LintRule {
           }
 
           // Get all nodes with the instanceId of the goto node
-          const nodes =
-            this.mainFlow?.enabledGraphData?.elements?.nodes?.filter((node) =>
+          const nodes = this.mainFlow?.graphData?.elements?.nodes?.filter(
+            (node) =>
               node.data?.properties?.nodeInstanceId?.value?.match(nodeId)
-            );
+          );
 
           nodes?.forEach((node) => {
             // get all schema items from properties, except nodeInstanceId

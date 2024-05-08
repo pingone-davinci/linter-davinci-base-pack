@@ -21,7 +21,7 @@ class EmptyFlow extends LintRule {
     try {
       const dvFlow = this.mainFlow;
 
-      if (Object.keys(dvFlow.enabledGraphData.elements).length === 0) {
+      if (Object.keys(dvFlow.graphData.elements).length === 0) {
         this.addError("dv-er-empty-flow-001");
       }
     } catch (err) {

@@ -25,18 +25,17 @@ class MultiStartRule extends LintRule {
       const ignoreNodeTypes = ["nodeConnector", "annotationConnector"];
       const notTargets = [];
 
-      this.mainFlow?.enabledGraphData?.elements?.nodes?.forEach((node) => {
+      this.mainFlow?.graphData?.elements?.nodes?.forEach((node) => {
         const nodeId = node.data?.id;
         const nodeType = node.data?.connectorId;
         // If this type of node is not in the ignore list, check the edges to see if it is listed as a target
         if (
           !ignoreNodeTypes.includes(nodeType) &&
-          this.mainFlow?.enabledGraphData?.elements?.edges?.length > 0
+          this.mainFlow?.graphData?.elements?.edges?.length > 0
         ) {
-          const targets =
-            this.mainFlow?.enabledGraphData?.elements?.edges.filter(
-              (edgeNode) => edgeNode.data?.target?.match(nodeId)
-            );
+          const targets = this.mainFlow?.graphData?.elements?.edges.filter(
+            (edgeNode) => edgeNode.data?.target?.match(nodeId)
+          );
           if (targets.length === 0) {
             notTargets.push({ nodeId, nodeType });
           }

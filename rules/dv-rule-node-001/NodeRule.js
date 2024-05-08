@@ -32,7 +32,7 @@ class NodeRule extends LintRule {
     try {
       const dvFlow = this.mainFlow;
 
-      dvFlow?.enabledGraphData?.elements?.nodes?.forEach((node) => {
+      dvFlow?.graphData?.elements?.nodes?.forEach((node) => {
         const { data } = node;
 
         // Check for node title

@@ -7,6 +7,7 @@ class ExampleRule extends LintRule {
       id: "dv-rule-general-001",
       description: "Perform a bunch of general checks that cleaning ability",
       cleans: true,
+      reference: "",
     });
   }
 

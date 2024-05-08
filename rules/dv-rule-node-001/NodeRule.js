@@ -11,6 +11,7 @@ class NodeRule extends LintRule {
       id: "dv-rule-node-001",
       description: "Ensure nodes have names/titles",
       cleans: false,
+      reference: "",
     });
 
     this.addCode("dv-bp-node-001", {
@@ -18,16 +19,12 @@ class NodeRule extends LintRule {
       message: "Missing nodeTitle on node (% - %)",
       type: "best-practice",
       recommendation: "A node title should be added",
-      reference:
-        "https://docs.pingidentity.com/r/en-us/davinci/rxo1664233464532",
     });
     this.addCode("dv-bp-node-002", {
       description: "All success/error JSON nodes should proper colors",
       message: "Incorrect node color [%] - %",
       type: "best-practice",
       recommendation: "Please use this color: [%]",
-      reference:
-        "https://docs.pingidentity.com/r/en-us/davinci/rxo1664233464532",
     });
   }
 

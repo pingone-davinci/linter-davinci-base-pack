@@ -7,6 +7,7 @@ class TitleNotOnTopRule extends LintRule {
       id: "dv-rule-canvas-004",
       description: "Verify Title Annotation is on top",
       cleans: false,
+      reference: "",
     });
 
     this.addCode("dv-bp-title-not-on-top-001", {

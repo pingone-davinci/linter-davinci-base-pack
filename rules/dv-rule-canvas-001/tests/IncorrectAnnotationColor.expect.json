@@ -30,7 +30,6 @@
                   "message": "Annotation color is not in palette [#3030aeff] (4pmrtt0pi7)",
                   "type": "best-practice",
                   "recommendation": "Use recommended CSS settings for Ping developed flows",
-                  "reference": "https://library.pingidentity.com/page/davinci-color-palette",
                   "nodeId": "4pmrtt0pi7"
                 }
               ]

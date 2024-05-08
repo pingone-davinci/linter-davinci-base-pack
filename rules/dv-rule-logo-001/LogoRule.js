@@ -7,6 +7,7 @@ class LogoRule extends LintRule {
       description:
         "Ensure logos are not hard coded and useCSS is used with a css logo tag.  Does not apply to subflows",
       cleans: false,
+      reference: "https://library.pingidentity.com/page/ping-ux-css",
     });
 
     this.addCode("dv-bp-logo-001", {
@@ -14,7 +15,6 @@ class LogoRule extends LintRule {
       message: "useCustomCSS not set to true",
       type: "best-practice",
       recommendation: "Use recommended CSS settings for Ping developed flows",
-      reference: "https://library.pingidentity.com/page/ping-ux-css",
     });
     this.addCode("dv-bp-logo-002", {
       description:
@@ -22,7 +22,6 @@ class LogoRule extends LintRule {
       message: "companyLogo class not included in custom CSS",
       type: "best-practice",
       recommendation: "Use recommended CSS settings for Ping developed flows",
-      reference: "https://library.pingidentity.com/page/ping-ux-css",
     });
     this.addCode("dv-bp-logo-003", {
       description:
@@ -30,7 +29,6 @@ class LogoRule extends LintRule {
       message: "companyLogo environment variable found",
       type: "best-practice",
       recommendation: "Use recommended CSS settings for Ping developed flows",
-      reference: "https://library.pingidentity.com/page/ping-ux-css",
     });
   }
 

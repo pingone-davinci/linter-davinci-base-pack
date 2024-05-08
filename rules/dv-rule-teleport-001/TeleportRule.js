@@ -6,6 +6,7 @@ class TeleportRule extends LintRule {
       id: "dv-rule-teleport-001",
       description: "Check for unused teleport nodes",
       cleans: true,
+      reference: "",
     });
 
     this.addCode("dv-er-teleport-001", {

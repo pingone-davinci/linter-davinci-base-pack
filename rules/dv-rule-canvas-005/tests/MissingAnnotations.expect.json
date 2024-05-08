@@ -30,7 +30,6 @@
                   "message": "Flow contains no annotations",
                   "type": "best-practice",
                   "recommendation": "Add annotations to flow",
-                  "reference": "https://library.pingidentity.com/page/davinci-color-palette"
                 }
               ]
             }

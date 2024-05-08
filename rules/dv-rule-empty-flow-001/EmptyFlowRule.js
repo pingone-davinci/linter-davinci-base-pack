@@ -6,6 +6,7 @@ class EmptyFlow extends LintRule {
       id: "dv-rule-empty-flow-001",
       description: "Ensure the flow is not empty",
       cleans: false,
+      reference: "",
     });
 
     this.addCode("dv-er-empty-flow-001", {

@@ -7,6 +7,7 @@ class DVRule extends LintRule {
       description:
         "Ensure that flow variables are used in flow.  And check for flow variables referenced in nodes but not defined",
       cleans: false,
+      reference: "",
     });
 
     this.addCode("dv-er-variable-001", {

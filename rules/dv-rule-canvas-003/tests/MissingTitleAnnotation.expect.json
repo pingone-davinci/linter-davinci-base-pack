@@ -30,7 +30,6 @@
                   "message": "Each flow should contain a title annotation node with a background color of #4462ed",
                   "type": "best-practice",
                   "recommendation": "Add a title annotation node (%)",
-                  "reference": "https://library.pingidentity.com/page/flow-title-annotation"
                 }
               ]
             }

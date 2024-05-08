@@ -7,14 +7,13 @@ class IncorrectAnnotationColorRule extends LintRule {
       id: "dv-rule-canvas-002",
       description: "Verify and clean font family for node annotations",
       cleans: true,
+      reference: "",
     });
 
     this.addCode("dv-bp-annotation-002", {
       description: "Found non-standard fontFamily used for Annotation",
       message: "Annotation font is not in sans-serif [%] (%)",
       type: "best-practice",
-      reference:
-        "https://docs.pingidentity.com/r/en-us/davinci/rxo1664233464532",
       recommendation: "Use sans-serif fontFamily for Annotations",
     });
   }

@@ -6,6 +6,7 @@ class MissingAnnotationsRule extends LintRule {
       id: "dv-rule-canvas-005",
       description: "Verify flow contains annotations",
       cleans: false,
+      reference: "",
     });
 
     this.addCode("dv-bp-annotation-003", {
@@ -13,7 +14,6 @@ class MissingAnnotationsRule extends LintRule {
         "It is a best practice to include annotations to document your flow",
       message: "Flow contains no annotations",
       type: "best-practice",
-      reference: "https://library.pingidentity.com/page/davinci-color-palette",
       recommendation: "Add annotations to flow",
     });
   }

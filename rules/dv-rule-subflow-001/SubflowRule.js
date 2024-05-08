@@ -6,6 +6,7 @@ class DVRule extends LintRule {
       id: "dv-rule-subflow-001",
       description: "Checks for subflow name mismatches",
       cleans: false,
+      reference: "",
     });
 
     this.addCode("dv-er-subflow-001", {

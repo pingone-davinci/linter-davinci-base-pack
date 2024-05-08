@@ -6,6 +6,7 @@ class DebugOffRule extends LintRule {
       id: "dv-rule-canvas-005",
       description: "Ensure the flow has debug mode turned off",
       cleans: false,
+      reference: "",
     });
 
     this.addCode("dv-rule-debug-off-001", {

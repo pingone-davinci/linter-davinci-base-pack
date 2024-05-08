@@ -7,6 +7,7 @@ class MultiStartRule extends LintRule {
       description:
         "Multiple potential start nodes, or disconnected nodes found",
       cleans: false,
+      reference: "",
     });
 
     this.addCode("dv-er-multi-start-001", {

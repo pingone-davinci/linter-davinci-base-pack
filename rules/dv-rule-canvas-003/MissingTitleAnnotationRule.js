@@ -7,6 +7,7 @@ class MissingTitleAnnotationRule extends LintRule {
       id: "dv-rule-canvas-003",
       description: "Verify flow contains title annotation",
       cleans: false,
+      reference: "https://library.pingidentity.com/page/flow-title-annotation",
     });
 
     this.addCode("dv-bp-missing-title-annotation-001", {
@@ -14,7 +15,6 @@ class MissingTitleAnnotationRule extends LintRule {
       message:
         "Each flow should contain a title annotation node with a background color of #4462ed",
       type: "best-practice",
-      reference: "https://library.pingidentity.com/page/flow-title-annotation",
       recommendation: "Add a title annotation node (%)",
     });
   }

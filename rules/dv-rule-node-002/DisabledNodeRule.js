@@ -6,6 +6,7 @@ class DisabledNodeRule extends LintRule {
       id: "dv-rule-node-002",
       description: "Disabled node found",
       cleans: false,
+      reference: "",
     });
 
     this.addCode("dv-er-node-001", {

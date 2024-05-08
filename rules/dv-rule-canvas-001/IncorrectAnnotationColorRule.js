@@ -6,13 +6,13 @@ class IncorrectAnnotationColorRule extends LintRule {
       id: "dv-rule-canvas-001",
       description: "Verify colors for node annotations",
       cleans: false,
+      reference: "https://library.pingidentity.com/page/davinci-color-palette",
     });
     this.addCode("dv-bp-annotation-001", {
       description:
         "Found color not included in best practices list for annotation node",
       message: "Annotation color is not in palette [%] (%)",
       type: "best-practice",
-      reference: "https://library.pingidentity.com/page/davinci-color-palette",
       recommendation: "Use recommended CSS settings for Ping developed flows",
     });
   }

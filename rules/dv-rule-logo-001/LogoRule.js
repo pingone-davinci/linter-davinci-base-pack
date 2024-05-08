@@ -3,7 +3,7 @@ const LintRule = require("pingone-davinci-linter/lib/LintRule");
 class LogoRule extends LintRule {
   constructor() {
     super({
-      id: "dv-bp-logo-001",
+      id: "dv-rule-logo-001",
       description:
         "Ensure logos are not hard coded and useCSS is used with a css logo tag.  Does not apply to subflows",
       cleans: false,

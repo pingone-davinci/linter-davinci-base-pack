@@ -35,6 +35,6 @@
     "prettier": "^2.7.1"
   },
   "dependencies": {
-    "pingone-davinci-linter": "git://github.com/pingone-davinci/pingone-davinci-linter.git#v0.6.0"
+    "pingone-davinci-linter": "github:pingone-davinci/pingone-davinci-linter#v0.6.0"
   }
 }

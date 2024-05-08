@@ -29,7 +29,7 @@
                   "code": "dv-bp-annotation-003",
                   "message": "Flow contains no annotations",
                   "type": "best-practice",
-                  "recommendation": "Add annotations to flow",
+                  "recommendation": "Add annotations to flow"
                 }
               ]
             }

@@ -30,49 +30,49 @@ class NodeRule extends LintRule {
 
   runRule() {
     try {
-      const dvFlow = this.mainFlow;
+      for (const flow of this.allFlows) {
+        flow?.graphData?.elements?.nodes?.forEach((node) => {
+          const { data } = node;
 
-      dvFlow?.graphData?.elements?.nodes?.forEach((node) => {
-        const { data } = node;
-
-        // Check for node title
-        if (
-          data.nodeType === "CONNECTION" &&
-          !data.properties?.nodeTitle?.value &&
-          !(
-            (data.name === "Teleport" || data.name === "Node") &&
-            data.capabilityName === "goToNode"
-          )
-        ) {
-          this.addError("dv-bp-node-001", {
-            messageArgs: [data.id, data.name],
-            nodeId: data.id,
-          });
-        }
-
-        // Check for Success/Error JSON background colors
-        const connectorCapability = `${data.connectorId}_${data.capabilityName}`;
-        if (
-          Object.keys(backgroundColor).find(
-            (o) => o === `${connectorCapability}`
-          )
-        ) {
+          // Check for node title
           if (
-            !data.properties?.backgroundColor?.value
-              .toLowerCase()
-              .startsWith(backgroundColor[connectorCapability])
+            data.nodeType === "CONNECTION" &&
+            !data.properties?.nodeTitle?.value &&
+            !(
+              (data.name === "Teleport" || data.name === "Node") &&
+              data.capabilityName === "goToNode"
+            )
           ) {
-            this.addError("dv-bp-node-002", {
-              messageArgs: [
-                data.properties?.backgroundColor?.value.toLowerCase(),
-                `${data.name} (${data.id}) - ${data.capabilityName}`,
-              ],
-              recommendationArgs: [backgroundColor[connectorCapability]],
+            this.addError("dv-bp-node-001", {
+              messageArgs: [data.id, data.name],
               nodeId: data.id,
             });
           }
-        }
-      });
+
+          // Check for Success/Error JSON background colors
+          const connectorCapability = `${data.connectorId}_${data.capabilityName}`;
+          if (
+            Object.keys(backgroundColor).find(
+              (o) => o === `${connectorCapability}`
+            )
+          ) {
+            if (
+              !data.properties?.backgroundColor?.value
+                .toLowerCase()
+                .startsWith(backgroundColor[connectorCapability])
+            ) {
+              this.addError("dv-bp-node-002", {
+                messageArgs: [
+                  data.properties?.backgroundColor?.value.toLowerCase(),
+                  `${data.name} (${data.id}) - ${data.capabilityName}`,
+                ],
+                recommendationArgs: [backgroundColor[connectorCapability]],
+                nodeId: data.id,
+              });
+            }
+          }
+        });
+      }
     } catch (err) {
       this.addError(undefined, { messageArgs: [`${err}`] });
     }

@@ -19,18 +19,18 @@ class DisabledNodeRule extends LintRule {
 
   runRule() {
     try {
-      const dvFlow = this.mainFlow;
+      for (const flow of this.allFlows) {
+        flow?.graphData?.elements?.nodes?.forEach((node) => {
+          const { data } = node;
 
-      dvFlow?.graphData?.elements?.nodes?.forEach((node) => {
-        const { data } = node;
-
-        if (data.isDisabled === true) {
-          this.addError("dv-er-node-001", {
-            messageArgs: [`(${data.id})`],
-            nodeId: data.id,
-          });
-        }
-      });
+          if (data.isDisabled === true) {
+            this.addError("dv-er-node-001", {
+              messageArgs: [`(${data.id})`],
+              nodeId: data.id,
+            });
+          }
+        });
+      }
     } catch (err) {
       this.addError(undefined, { messageArgs: [`${err}`] });
     }

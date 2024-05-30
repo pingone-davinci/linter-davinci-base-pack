@@ -76,7 +76,7 @@ class TeleportRule extends LintRule {
             );
 
             callingSchema.forEach((attrName) => {
-              if (gotoNodeInputSchemaJSON.properties[attrName] === undefined) {
+              if (gotoNodeInputSchemaJSON.properties && gotoNodeInputSchemaJSON.properties[attrName] === undefined) {
                 this.addError("dv-er-teleport-002", {
                   messageArgs: [attrName],
                   nodeId: node.data.id,

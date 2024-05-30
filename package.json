@@ -1,6 +1,6 @@
 {
   "name": "linter-davinci-base-pack",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Collection of base rules used to lint DaVinci flows.",
   "main": "RulePack.js",
   "scripts": {

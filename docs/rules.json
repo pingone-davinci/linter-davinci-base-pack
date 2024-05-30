@@ -2,7 +2,7 @@
   {
     "name": "linter-davinci-base-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "rules": [
       {
         "id": "dv-rule-annotations-001",

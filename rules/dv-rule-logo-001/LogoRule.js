@@ -25,10 +25,17 @@ class LogoRule extends LintRule {
     });
     this.addCode("dv-bp-logo-003", {
       description:
-        "Found companyLogo environment variable in variables connector, this should be handled in custom CSS settings",
-      message: "companyLogo environment variable found",
+        "Didn't find companyLogo environment variable in variables connector, this variable should be present in the flow.",
+      message: "companyLogo environment variable not found. (% - %)",
       type: "best-practice",
-      recommendation: "Use recommended CSS settings for Ping developed flows",
+      recommendation: "Use companyLogo environment variable for Ping developed flows",
+    });
+    this.addCode("dv-bp-logo-004", {
+      description:
+        "Didn't find companyName environment variable in variables connector, this variable should be present in the flow.",
+      message: "companyName environment variable not found. (% - %)",
+      type: "best-practice",
+      recommendation: "Use companyName environment variable for Ping developed flows",
     });
   }
 
@@ -50,20 +57,39 @@ class LogoRule extends LintRule {
         this.addError("dv-bp-logo-002");
       }
 
-      // Search for companyLogo environment variable
-      dvFlow.graphData?.elements?.nodes?.forEach((node) => {
-        const { data } = node;
+      for (const flow of this.allFlows) {
+        let companyLogoFound = false;
+        let companyNameFound = false;
 
-        if (data.connectorId === "variablesConnector") {
-          data.properties?.saveVariables?.value?.forEach((obj) => {
-            if (obj.name === "companyLogo") {
-              this.addError("dv-bp-logo-003", {
-                nodeId: data.id,
-              });
+        // Search for companyLogo and companyName environment variables
+        (flow.graphData?.elements?.nodes || []).some((node) => {
+          const { data } = node;
+
+          if (data.connectorId === "variablesConnector") {
+            const saveVariables = data.properties?.saveVariables?.value;
+            if (saveVariables) {
+              companyLogoFound = saveVariables.some((obj) => obj.name === "companyLogo");
+              companyNameFound = saveVariables.some((obj) => obj.name === "companyName");
+
+              // If both variables are found, break out of the loop
+              return companyLogoFound && companyNameFound;
             }
+          }
+          return false; // Not found, continue searching
+        });
+
+        if (!companyLogoFound) {
+          this.addError("dv-bp-logo-003", {
+            messageArgs: ["Flow Id", flow.flowId]
           });
         }
-      });
+
+        if (!companyNameFound) {
+          this.addError("dv-bp-logo-004", {
+            messageArgs: ["Flow Id", flow.flowId]
+          });
+        }
+      }
     } catch (err) {
       this.addError(undefined, { messageArgs: [`${err}`] });
     }

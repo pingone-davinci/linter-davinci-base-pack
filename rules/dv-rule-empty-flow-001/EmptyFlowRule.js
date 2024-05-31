@@ -19,10 +19,10 @@ class EmptyFlow extends LintRule {
 
   runRule() {
     try {
-      const dvFlow = this.mainFlow;
-
-      if (Object.keys(dvFlow.graphData.elements).length === 0) {
-        this.addError("dv-er-empty-flow-001");
+      for (const flow of this.allFlows) {
+        if (Object.keys(flow.graphData.elements).length === 0) {
+          this.addError("dv-er-empty-flow-001");
+        }
       }
     } catch (err) {
       this.addError(undefined, { messageArgs: [`${err.message}`] });

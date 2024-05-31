@@ -2,7 +2,7 @@
   {
     "name": "linter-davinci-base-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "rules": [
       {
         "id": "dv-rule-annotations-001",
@@ -103,11 +103,18 @@
             "code": "dv-bp-logo-002"
           },
           "dv-bp-logo-003": {
-            "description": "Found companyLogo environment variable in variables connector, this should be handled in custom CSS settings",
-            "message": "companyLogo environment variable found",
+            "description": "Didn't find companyLogo environment variable in variables connector, this variable should be present in the flow.",
+            "message": "companyLogo environment variable not found. (% - %)",
             "type": "best-practice",
-            "recommendation": "Use recommended CSS settings for Ping developed flows",
+            "recommendation": "Use companyLogo environment variable for Ping developed flows",
             "code": "dv-bp-logo-003"
+          },
+          "dv-bp-logo-004": {
+            "description": "Didn't find companyName environment variable in variables connector, this variable should be present in the flow.",
+            "message": "companyName environment variable not found. (% - %)",
+            "type": "best-practice",
+            "recommendation": "Use companyName environment variable for Ping developed flows",
+            "code": "dv-bp-logo-004"
           }
         },
         "reference": "https://library.pingidentity.com/page/ping-ux-css",

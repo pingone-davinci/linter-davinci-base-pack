@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-const LintRule = require("pingone-davinci-linter/lib/LintRule");
+const { LintRule } = require("@pingidentity/dvlint");
 
 class ExampleRule extends LintRule {
   constructor() {

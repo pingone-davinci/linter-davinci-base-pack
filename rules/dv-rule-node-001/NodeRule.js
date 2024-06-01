@@ -1,4 +1,4 @@
-const LintRule = require("pingone-davinci-linter/lib/LintRule");
+const { LintRule } = require("@pingidentity/dvlint");
 
 const backgroundColor = {
   httpConnector_createSuccessResponse: "#9dc967",

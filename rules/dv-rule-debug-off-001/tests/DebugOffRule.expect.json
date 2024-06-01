@@ -4,7 +4,6 @@
   "errorCount": 1,
   "rulePackResults": [
     {
-      "name": "linter-davinci-base-pack",
       "pass": false,
       "errorCount": 1,
       "lintResults": [

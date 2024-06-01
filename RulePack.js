@@ -1,4 +1,5 @@
-const LintRulePack = require("pingone-davinci-linter/lib/LintRulePack");
+const { LintRulePack } = require("@pingidentity/dvlint");
+
 const {
   name,
   version,

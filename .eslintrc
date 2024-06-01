@@ -43,6 +43,10 @@
         "js": "never",
         "ts": "never"
       }
+    ],
+    "import/no-extraneous-dependencies": [
+      "warning",
+      {}
     ]
   },
   "overrides": [

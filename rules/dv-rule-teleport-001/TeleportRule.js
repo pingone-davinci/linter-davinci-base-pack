@@ -1,4 +1,4 @@
-const LintRule = require("pingone-davinci-linter/lib/LintRule");
+const { LintRule } = require("@pingidentity/dvlint");
 
 class TeleportRule extends LintRule {
   constructor() {
@@ -76,7 +76,10 @@ class TeleportRule extends LintRule {
             );
 
             callingSchema.forEach((attrName) => {
-              if (gotoNodeInputSchemaJSON.properties && gotoNodeInputSchemaJSON.properties[attrName] === undefined) {
+              if (
+                gotoNodeInputSchemaJSON.properties &&
+                gotoNodeInputSchemaJSON.properties[attrName] === undefined
+              ) {
                 this.addError("dv-er-teleport-002", {
                   messageArgs: [attrName],
                   nodeId: node.data.id,
